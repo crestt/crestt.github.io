@@ -1,52 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>张玉清的个人主页</title>
-	<meta charset="utf-8">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
-<style type="text/css">
-	*{
-		margin: 0;
-		padding: 0;
-	}
-
-</style>
-
 <body>
-	<header class="header-background">
-		<div class="header-title">
-			<img src="images/titlelogo.jpg" class="pic">
-			<h2>张玉清</h2>
-			<p>深圳 动效设计 你的介绍</p>
-		</div>
-		<nav>
-			<div>
-				<li><a href="index.html">作品</a></li>
-				<li><a href="introduce.html">简介</a></li>
+	<header>
+		<div class="container-fluid text-center">
+			<div style="height: 100%">                    
+				<img src="images/titlelogo.jpg" class="img-responsive center-block img-circle" alt="title logo">
+				<h3 class="text-white">张玉清</h3>
+				<p class="text-white">深圳 动效设计 你的介绍</p>
 			</div>
-			<div>
-				<a href="">
-					<svg></svg>
-				</a>
-				<a href="">
-					<svg></svg> 
-				</a>
-			</div>
-		</nav>
-	</header>
-	<main>
-		<div class="contain">
-			<a href="">
-				<img src="">
-				<div class="content">
-					<p>2017/02</p>
-					<h3>项目名称</h3>
-					<p>项目介绍简要</p>
+			<nav class="text-center">
+				<ul class="nav nav-tabs">
+					<li role="presentation" class="active"><a href="index.html">作品</a></li>
+					<li role="presentation" ><a href="introduce.html">简介</a></li>
+				</ul>
+				<div>
+					<a href="">
+						<svg class="icon" aria-hidden="true">
+  							<use xlink:href="#icon-zhanku"></use>
+						</svg>
+					</a>
+					<a href="">
+						<svg></svg> 
+					</a>
 				</div>
-			</a>
+			</nav>			
 		</div>
+
+	</header>
+	<main class="contain">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col" >
+				<div class="card">
+					<a href="">
+						<div id="chang" class="zp_pic" ><img src="images/zp1.png" alt="zp1" style="width: 100%;"></div>
+						<div class="content">
+							<p>2017/02</p>
+							<h3>项目名称</h3>
+							<p>项目介绍简要</p>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col" style="padding: 20px;">
+				<div style=" background-color: yellow;">
+					<a href="">
+					<div class="zp_pic"><img src="images/zp1.png" alt="zp1"></div>
+					<div class="content" >
+						<p>2017/02</p>
+						<h3>项目名称</h3>
+						<p>项目介绍简要</p>
+					</div>
+				</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col" style="padding: 20px;">
+				<div style=" background-color: yellow;">
+					<a href="">
+					<div class="zp_pic"><img src="images/zp1.png" alt="zp1"></div>
+					<div class="content">
+						<p>2017/02</p>
+						<h3>项目名称</h3>
+						<p>项目介绍简要</p>
+					</div>
+				</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">作品布局</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">作品布局</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">作品布局</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">作品布局</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">作品布局</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">作品布局</div>
+		</div>
+		
 	</main>
-	
+	<script src="js/iconfont.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/changcss.js"></script>
 </body>
 </html>
