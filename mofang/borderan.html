@@ -5,6 +5,9 @@
 	<title>边框动画及渐变</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src= "https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
 </head>
 <body>
 	<!-- top -->
@@ -21,11 +24,49 @@
 	<div class="nav">
 		<nav>
 			<ul>
-				<li>ABOUT</li>
-				<li>CONTACT</li>
-				<li>ZCOOL</li>
+				<li><a href="">ABOUT</a></li>
+				<li><a href="mailto:695653083@qq.com?subject=hello&body=张玉清">CONTACT</a></li>
+				<li><a href="http://www.zcool.com.cn/u/14591085">ZCOOL</a></li>
 			</ul>
 		</nav>
+	</div>
+	<!-- wrapper -->
+	<div id="masonry" class="grid">
+		<div class="grid-item">
+			<img src="img/1.jpg" class="thumb wb-post-image">
+			<h2>jieshaozaizheli</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/2.jpg" class="thumb wb-post-image">
+			<h2>jieshaozaizheli</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/3.jpg" class="thumb wb-post-image">
+			<h2>jieshaozaizheli</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/4.jpg" class="thumb wb-post-image">
+			<h2>sdcnoasid</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/5.jpg" class="thumb wb-post-image">
+			<h2>adsbcakudhi</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/6.gif" class="thumb wb-post-image">
+			<h2>ksadbia</h2>
+			<a href="#">MORE</a>
+		</div>
+		<div class="grid-item">
+			<img src="img/7.gif" class="thumb wb-post-image">
+			<h2>ksjdbiasud</h2>
+			<a href="#">MORE</a>
+		</div>
 	</div>
 	<!-- line -->
 	<div>
@@ -34,6 +75,76 @@
 		<div class="rim" id="r_left"></div>
 		<div class="rim" id="r_right"></div>
 	</div>
-	
+	<script type="text/javascript">
+		 jQuery(function( $ ) {
+   $(document).ready(function() {
+
+
+
+     var $container = $('.grid');//投稿を囲うクラスやIDを指定します。
+        $container.imagesLoaded(function(){
+            $container.masonry({
+                itemSelector: '.grid-item',//投稿に適用されているクラスやIDを指定します。
+                columnWidth: '.grid-item', //masonryのオプションです。
+                gutter: 16,
+               isFitWidth: true
+
+            });
+        });
+
+        $container.infinitescroll({
+                navSelector  : '.infinite',//ページャーを囲うクラスやIDを指定します。
+                nextSelector : '.infinite a',//「次の記事」へのリンクを示すクラスなどを指定します。
+                itemSelector : '.grid-item',//投稿に適用されているクラスやIDを指定します。
+                loading: {
+                    finishedMsg: '<div class="end">COMPLETE</div>',
+                    msgText: '<div class="load"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div></div></div></div>',//ローディング時のテキストを指定します。
+                    img: ''
+                }
+            },
+            function( newElements ) {
+                var $newElems = $( newElements ).css({ opacity: 0 });
+                $newElems.imagesLoaded(function(){
+                    $newElems.animate({ opacity: 1 });
+                    $container.masonry( 'appended', $newElems, true );
+
+                });
+                Intense( $newElems.find('.thumb'));
+            }
+        );
+
+        // Pause Infinite Scroll
+        // $(window).unbind('.infscr');
+
+        // Resume Infinite Scroll
+        // $('.infinite a').click(function(){
+        //   $container.infinitescroll('retrieve');
+        //   return false;
+        // });
+
+
+
+        // intence
+        var elements = document.querySelectorAll( '.thumb' );
+        Intense( elements );
+
+
+
+      // modal
+      $('.inline').modaal({
+      fullscreen: true
+      });
+
+      // display none
+      $('.op').delay(3000).queue(function(){
+           $(this).hide();
+       });
+
+
+
+    });
+
+ });
+	</script>
 </body>
 </html>
