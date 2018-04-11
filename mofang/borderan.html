@@ -8,6 +8,7 @@
 	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src= "https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
 	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/infinite-scroll.pkgd.min.js"></script>
 </head>
 <body>
 	<!-- top -->
@@ -92,7 +93,7 @@
             });
         });
 
-        $container.infinitescroll({
+        $container.infiniteScroll({
                 navSelector  : '.infinite',//ページャーを囲うクラスやIDを指定します。
                 nextSelector : '.infinite a',//「次の記事」へのリンクを示すクラスなどを指定します。
                 itemSelector : '.grid-item',//投稿に適用されているクラスやIDを指定します。
