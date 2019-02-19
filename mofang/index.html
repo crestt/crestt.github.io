@@ -82,11 +82,11 @@
 
 
 
-     var $container = $('.grid');//投稿を囲うクラスやIDを指定します。
+     var $container = $('.grid');
         $container.imagesLoaded(function(){
             $container.masonry({
-                itemSelector: '.grid-item',//投稿に適用されているクラスやIDを指定します。
-                columnWidth: '.grid-item', //masonryのオプションです。
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-item', 
                 gutter: 16,
                isFitWidth: true
 
@@ -94,12 +94,12 @@
         });
 
         $container.infiniteScroll({
-                navSelector  : '.infinite',//ページャーを囲うクラスやIDを指定します。
-                nextSelector : '.infinite a',//「次の記事」へのリンクを示すクラスなどを指定します。
-                itemSelector : '.grid-item',//投稿に適用されているクラスやIDを指定します。
+                navSelector  : '.infinite',
+                nextSelector : '.infinite a',
+                itemSelector : '.grid-item',
                 loading: {
                     finishedMsg: '<div class="end">COMPLETE</div>',
-                    msgText: '<div class="load"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div></div></div></div>',//ローディング時のテキストを指定します。
+                    msgText: '<div class="load"><div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div></div></div></div>',
                     img: ''
                 }
             },
