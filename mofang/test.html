@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+	#r_bottom {
+		bottom: 0;
+		right: 0;
+		width: 0%;
+		-webkit-animation: r_bottom 1s ease 1 forwards;
+		animation: r_bottom 1s ease 1 forwards;
+	}
+
+	@-webkit-keyframes r_bottom {
+		0%{width: 0%;}
+		100%{width: 100%;}
+	}
+	@keyframes r_bottom {
+		0%{width: 0%;}
+		100%{width: 100%;}
+	}
+
+
+	.rim {
+		position: absolute;
+		z-index: 500;
+		background: #323;
+		width: 8px;
+		height: 8px;
+	}
+
+	@media screen and (max-width: 667px){
+		.rim {
+		width: 6px;
+		height: 6px;
+		}
+	}
+</style>
+<body>
+    <div>
+		<div class="rim" id="r_top"></div>
+		<div class="rim" id="r_bottom"></div>
+		<div class="rim" id="r_left"></div>
+		<div class="rim" id="r_right"></div>
+	</div>
+</body>
+</html>
