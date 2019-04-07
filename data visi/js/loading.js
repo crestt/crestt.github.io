@@ -1,45 +1,12 @@
 // JavaScript Document
 // var loadingHost = '';
-var loadingHost = 'https://static.lagou.com/activity-rsrc/dist/2017-summary/';
+var loadingHost = 'https://github.com/crestt/crestt.github.io/tree/master/data%20visi/images';
 var imgArray = [
-	"images/cover-bg-time.png",
-	"images/cover-btn.png",
-	"images/cover-center.png",
-	"images/cover-detail.png",
-	"images/cover-logo-sohu.png",
-	"images/cover-logo.png",
-	"images/cover-title.png",
-	"images/icon.png",
-	"images/title-bg.png",
-	"images/page0-bg.png",
-	"images/page0-center-bg.png",
-	"images/page0-icon.png",
-	"images/page1-center-bg.png",
-	"images/page1-icon.png",
-	"images/page2-center-bg.png",
-	"images/page2-icon.png",
-	// "images/page3-center-bg.png",
-	"images/page3-icon.png?v=2",
-	"images/page4-center-bg.png",
-	"images/page4-icon.png",
-	"images/page4-icon2.png",
-	// "images/page5-center-bg.png",
-	"images/page5-icon.png",
-	// "images/page6-center-bg.png",
-	"images/page6-icon.png?v=2",
-	"images/page7-center-bg.png",
-	"images/page7-icon.png",
-	"images/page7-icon2.png",
-	"images/page8-icon.png",
-	"images/page8-light.png",
-	"images/page8-logo-sohu.png",
-	"images/page8-logo-0.png",
-	"images/page8-logo-1.png",
-	"images/page8-logo-2.png",
-	"images/page8-other.png",
-	"images/page8-plane.png",
-	"images/page8-title-bg-sohu.png",
-	"images/title-bg.png"
+	'bg.png',
+	'dianshi.png',
+	'page0-li1.png',
+	'page0-li2.png',
+	'page0-li3.png'
 ];
 var now = 0;
 // jQuery.ajax({
