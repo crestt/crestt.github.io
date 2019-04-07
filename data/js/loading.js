@@ -85,7 +85,9 @@ var Loader = function(){
 		setTimeout(function(){
 			console.log("加载完毕");
 			loadingStatus = true;
+			console.log(pageStatus);
 			if(pageStatus){
+				console.log('pageStatus true');
 				pageStatus = false;
 				loadingStatus = false;
 				loadingSuccess();
@@ -116,3 +118,10 @@ var Loader = function(){
 var loader = new Loader();
 loader.loadLoading(imgArray,loader);
 //};
+
+loadingSuccess = function(){
+	console.log('success');
+	var cover = document.getElementById('cover');
+	cover.className = cover.className.replace(' hide','');
+	document.getElementById('loading').className += ' hide';
+}
