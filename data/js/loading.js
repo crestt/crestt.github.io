@@ -1,7 +1,14 @@
 // JavaScript Document
-// var loadingHost = '';
+// var loadingHost = 'https://github.com/crestt/crestt.github.io/tree/master/data/images';
 var imgArray = [
-	"images/loading.gif"
+	"images/dianshi.png",
+	"images/bg.png",
+	"images/page0-li1.png",
+	"images/page0-li2.png",
+	"images/page0-li3.png",
+	"images/page0-li4.png",
+	"images/page0-li5.png",
+	"images/page0-title.png"
 ];
 var now = 0;
 
