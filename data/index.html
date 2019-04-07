@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/default.css">
+</head>
+<body>
+    <div id="app">
+        <div id="loading"></div>
+        <div class="page0" id="cover">
+            <div class="center" :class="page0['animation-'+page0.status]['title-bg']">
+                <div class="title" :class="page0['animation-'+page0.status]['title']"></div>
+                <div class="pane">
+                    <div class="pane1"><div class="p1" :class="page0['animation-'+page0.status]['p1']"></div></div>
+                    <div class="pane2"><div class="p2" :class="page0['animation-'+page0.status]['p2']"></div></div>
+                    <div class="pane3"><div class="p3" :class="page0['animation-'+page0.status]['p3']"></div></div>
+                    <div class="pane4"><div class="p4" :class="page0['animation-'+page0.status]['p4']"></div></div>
+                    <div class="pane5"><div class="p5" :class="page0['animation-'+page0.status]['p5']"></div></div>
+                </div>
+                <div class="list1" :class="page0['animation-'+page0.status]['li1']"></div>
+                <div class="list2" :class="page0['animation-'+page0.status]['li2']"></div>
+                <div class="list3" :class="page0['animation-'+page0.status]['li3']"></div>
+                <div class="list4" :class="page0['animation-'+page0.status]['li4']"></div>
+                <div class="list5" :class="page0['animation-'+page0.status]['li5']"></div>
+                
+                <div class="icon tada"></div>
+            </div>
+        </div>
+        <div class="page1">
+            <div class="title"></div>
+            <div class="chart"></div>
+            <div class="bottom prev" 
+            :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prev']">
+            <div class="page-icon prev-text"></div>
+            <div class="page-icon prev-line" :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prevLine']"></div>
+            </div>
+            <div class="bottom next" 
+            :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['next']"
+            @touchstart.stop.prevent="toNextEvent">
+            <div class="page-icon next-text" :class="bottom['animation-'+bottom.status+'-'+bottom.direction].nextInfinite"></div>
+            <div class="page-icon next-line" 
+                :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['nextLine']"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 设置html字体大小用于rem单位参照
+        function getQueryString(parm){
+            var reg = new RegExp("(^|&)" + parm + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+
+            if (r != null) print(unescape(r[2])); 
+            return null;
+        }
+        var app = getQueryString('isAndriod');
+        // 检查字体
+        var lastSize = 16,
+            htmlStatus = 0,
+            bodyElement = document.documentElement || document.body,
+            RC = {
+                w:750,
+                h:1334
+            },
+            GC = {
+                w:bodyElement.clientWidth,
+                h:bodyElement.clientHeight
+            },
+            checkStatus = false,
+            initStatus = false;
+
+        function setFontSize(){
+            var portrait =  false,
+                resize = "orientationchange"in window ? window.orientationchange : window.resize,
+                rightSize = parseFloat((RC.w / RC.h).toFixed(1)),
+                currentSize = parseFloat((GC.w / GC.h).toFixed(1)),
+                lastHTMLSize = 16,
+                html = document.getElementsByTagName("html")[0];
+
+            try{
+                portrait = window.matchMedia("(orientation: portrait)").matches;
+            } catch(e){}
+            
+            if(rightSize > currentSize){  // 长屏
+                lastHTMLSize = 16;
+            }else if(rightSize < currentSize){  //宽屏
+                lastHTMLSize = (RC.h / GC.h * GC.w) / RC.w * 16;// + 4;
+                htmlStatus = 1;
+                if(app == 'ios' || app == 'android'){
+                    lastHTMLSize = (RC.h / GC.h * GC.w) / RC.w * 16 + 2;
+                }
+            }else if(/(Mi-4c)/g.test(navigator.userAgent)){
+                lastHTMLSize = lastHTMLSize + 2;
+            }
+            lastSize = lastHTMLSize;
+            html.style.fontSize=GC.w/lastHTMLSize+'px';
+        }
+        setFontSize();
+        var loadingStatus = false,
+            pageStatus = false,
+            startTime = new Date().getTime(),
+            loadingSuccess = function(){
+                var cover = document.getElementById('cover');
+                cover.className = cover.className.replace(' hide','');
+                document.getElementById('loading').className += ' hide';
+            }
+    </script>
+    <script src="js/echarts.common.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/vue2.1.10.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+  
