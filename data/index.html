@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="dist/default.css">
 </head>
 <body>
-
     <script>
         // 设置html字体大小用于rem单位参照
         function getQueryString(parm){
@@ -75,39 +74,56 @@
 
 <div id="loading" class="loading"></div>
 <div id="app">
-    <div class="page0 hide" id="cover">
-        <div class="center" :class="page0['animation-'+page0.status]['title-bg']">
-            <div class="title" :class="page0['animation-'+page0.status]['title']"></div>
+    <div class="cover hide" id="cover">
+        <div class="center" :class="cover['animation-'+cover.status]['title-bg']">
+            <div class="title" :class="cover['animation-'+cover.status]['title']"></div>
             <div class="pane">
-                <div class="pane1"><div class="p1" :class="page0['animation-'+page0.status]['p1']"></div></div>
-                <div class="pane2"><div class="p2" :class="page0['animation-'+page0.status]['p2']"></div></div>
-                <div class="pane3"><div class="p3" :class="page0['animation-'+page0.status]['p3']"></div></div>
-                <div class="pane4"><div class="p4" :class="page0['animation-'+page0.status]['p4']"></div></div>
-                <div class="pane5"><div class="p5" :class="page0['animation-'+page0.status]['p5']"></div></div>
+                <div class="pane1"><div class="p1" :class="cover['animation-'+cover.status]['p1']"></div></div>
+                <div class="pane2"><div class="p2" :class="cover['animation-'+cover.status]['p2']"></div></div>
+                <div class="pane3"><div class="p3" :class="cover['animation-'+cover.status]['p3']"></div></div>
+                <div class="pane4"><div class="p4" :class="cover['animation-'+cover.status]['p4']"></div></div>
+                <div class="pane5"><div class="p5" :class="cover['animation-'+cover.status]['p5']"></div></div>
             </div>
-            <div class="list1" :class="page0['animation-'+page0.status]['li1']"></div>
-            <div class="list2" :class="page0['animation-'+page0.status]['li2']"></div>
-            <div class="list3" :class="page0['animation-'+page0.status]['li3']"></div>
-            <div class="list4" :class="page0['animation-'+page0.status]['li4']"></div>
-            <div class="list5" :class="page0['animation-'+page0.status]['li5']"></div>
-            
-            <div class="icon tada"></div>
+            <div class="list1" :class="cover['animation-'+cover.status]['li1']"></div>
+            <div class="list2" :class="cover['animation-'+cover.status]['li2']"></div>
+            <div class="list3" :class="cover['animation-'+cover.status]['li3']"></div>
+            <div class="list4" :class="cover['animation-'+cover.status]['li4']"></div>
+            <div class="list5" :class="cover['animation-'+cover.status]['li5']"></div>
+            <div :class="cover['animation-'+cover.status]['icon']">
+                <img src="./images/dianshi.png" class="icon tada" @touchstart.stop.prevent="showPageData" alt="">
+            </div>
         </div>
     </div>
-    <div class="page1">
-        <div class="title"></div>
+    <div class="page page0 hide">
+        <div class="title">第一页</div>
         <div class="chart"></div>
         <div class="bottom prev" 
         :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prev']">
-        <div class="page-icon prev-text"></div>
-        <div class="page-icon prev-line" :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prevLine']"></div>
+            <div class="page-icon prev-text"></div>
+            <div class="page-icon prev-line" :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prevLine']"></div>
         </div>
         <div class="bottom next" 
         :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['next']"
         @touchstart.stop.prevent="toNextEvent">
-        <div class="page-icon next-text" :class="bottom['animation-'+bottom.status+'-'+bottom.direction].nextInfinite"></div>
-        <div class="page-icon next-line" 
-            :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['nextLine']"></div>
+            <div class="page-icon next-text" :class="bottom['animation-'+bottom.status+'-'+bottom.direction].nextInfinite"></div>
+            <div class="page-icon next-line" 
+                :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['nextLine']"></div>
+        </div>
+    </div>
+    <div class="page page1 hide">
+        <h1>第二页</h1>
+        <div class="bottom prev" 
+            :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prev']"
+            @touchstart.stop.prevent="toBackEvent">
+            <div class="page-icon prev-text"></div>
+            <div class="page-icon prev-line" :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['prevLine']"></div>
+        </div>
+        <div class="bottom next" 
+            :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['next']"
+            @touchstart.stop.prevent="toNextEvent">
+            <div class="page-icon next-text"></div>
+            <div class="page-icon next-line" 
+                :class="bottom['animation-'+bottom.status+'-'+bottom.direction]['nextLine']"></div>
         </div>
     </div>
 </div>
